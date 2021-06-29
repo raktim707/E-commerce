@@ -1,0 +1,19 @@
+{% extends "store/main.html" %}
+{% load static %}
+
+{% block title %}
+{{ product.name }}
+{% endblock %}
+
+{% block content %}
+<div class="product-detail col-lg-7">
+    <img src={{product.imageURL}}>
+    <h1>{{ product.name }}</h1>
+    <p class="price">$ {{ product.price }}</p>
+    <button style= "color:white" data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to cart</button>
+    <hr>
+    <hr><br>
+    {{product.description|linebreaks }}
+</div>
+
+{% endblock %}
